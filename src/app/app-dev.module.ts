@@ -9,6 +9,8 @@ import {
 } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './core';
 
+import { AppStoreModule } from './store/app-store.module';
+
 @NgModule({
   imports: [
     AppModule,
@@ -18,7 +20,8 @@ import { InMemoryDataService } from './core';
       dataEncapsulation: false,
       delay: 300,
       passThruUnknownUrl: true
-    })
+    }),
+    AppStoreModule
   ],
   providers: [{ provide: InMemoryDataService, useExisting: InMemoryDbService }],
   bootstrap: [AppComponent]
